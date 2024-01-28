@@ -1,0 +1,3 @@
+LEAP YEAR:
+
+If a year is evenly divisible by 4 but not by 100, then it is a LEAP YEAR

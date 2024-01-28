@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+
+
+
+</style>
+
+</head>
+<body onload="initialize_calendar();">
+    
+
+
+<div class="calendar_rapper" >
+
+      <!-- Calendar TITLE-->
+      <div class="calendar_route" >
+            <div class="month_year_pen">
+                <input class="calendar_month" id="calendar_month" type="text" readonly value="" >
+                <input class="calendar_year" id="calendar_year" type="text" readonly value="" >
+
+            </div> 
+
+            <div class="toggle_buttons_rapper" > 
+                <button class="toggle_left" onclick="subtractMonth();" > &lt </button>
+                <button class="toggle_right" onclick="addMonth();" > &gt </button>
+            </div>
+      </div>
+    <!--Calendar Days Column-->
+	<div class="days_column_title" style="text-align: center;">
+        <div class="sun" style="text-align: center;">SUN </div>
+        <div class="mon"> MON</div>
+        <div class="tue"> TUE</div>
+        <div class="wed"> WED</div>
+        <div class="thu"> THU</div>
+        <div class="fri"> FRI</div>
+        <div class="sat"> SAT</div>
+    </div>
+    <!-- Calendar Week 1-->
+    <div class="week1" >
+        <button class="day1" id="day1" onclick="toggleClass(this )" value="engage" ></button>
+        <button class="day2" id="day2" onclick="toggleClass2(this )" value="engage" ></button>
+        <button class="day3" id="day3" onclick="toggleClass3(this )" value="engage" ></button>
+        <button class="day4" id="day4" onclick="toggleClass4(this )" value="engage" ></button>
+        <button class="day5" id="day5" onclick="toggleClass5(this )" value="engage" ></button>
+        <button class="day6" id="day6" onclick="toggleClass6(this )" value="engage" ></button>
+        <button class="day7" id="day7" onclick="toggleClass7(this )" value="engage" ></button>
+    </div>
+
+    <!-- Calendar Week 2-->
+    <div class="week2">
+        <button class="day8" id="day8" onclick="toggleClass8(this )" value="engage" ></button>
+        <button class="day9" id="day9" onclick="toggleClass9(this )" value="engage" ></button>
+        <button class="day10" id="day10" onclick="toggleClass10(this )" value="engage" ></button>
+        <button class="day11" id="day11" onclick="toggleClass11(this )" value="engage" ></button>
+        <button class="day12" id="day12" onclick="toggleClass12(this )" value="engage" ></button>
+        <button class="day13" id="day13" onclick="toggleClass13(this )" value="engage" ></button>
+        <button class="day14" id="day14" onclick="toggleClass14(this )" value="engage" ></button>
+        
+    </div>
+
+    <!-- Calendar Week 3-->
+    <div class="week3">
+        <button class="day15" id="day15" onclick="toggleClass15(this )" value="engage" ></button>
+        <button class="day16" id="day16" onclick="toggleClass16(this )" value="engage" ></button>
+        <button class="day17" id="day17" onclick="toggleClass17(this )" value="engage" ></button>
+        <button class="day18" id="day18" onclick="toggleClass18(this )" value="engage" ></button>
+        <button class="day19" id="day19" onclick="toggleClass19(this )" value="engage" ></button>
+        <button class="day20" id="day20" onclick="toggleClass20(this )" value="engage" ></button>
+        <button class="day21" id="day21" onclick="toggleClass21(this )" value="engage" ></button>
+    </div>
+
+    <!-- Calendar Week 4-->
+    <div class="week4" >
+        <button class="day22" id="day22" onclick="toggleClass22(this )" value="engage" ></button>
+        <button class="day23" id="day23" onclick="toggleClass23(this )" value="engage" ></button>
+        <button class="day24" id="day24" onclick="toggleClass24(this )" value="engage" ></button>
+        <button class="day25" id="day25" onclick="toggleClass25(this )" value="engage" ></button>
+        <button class="day26" id="day26" onclick="toggleClass26(this )" value="engage" ></button>
+        <button class="day27" id="day27" onclick="toggleClass27(this )" value="engage" ></button>
+        <button class="day28" id="day28" onclick="toggleClass28(this )" value="engage" ></button>
+        
+    </div>
+
+    <!-- Calendar Week 5-->
+    <div class="week5">
+        <button class="day29" id="day29" onclick="toggleClass29(this )" value="engage" ></button>
+        <button class="day30" id="day30" onclick="toggleClass30(this )" value="engage" ></button>
+        <button class="day31" id="day31" onclick="toggleClass31(this )" value="engage" ></button>
+        <button class="day32" id="day32" onclick="toggleClass32(this )" value="engage" ></button>
+        <button class="day33" id="day33" onclick="toggleClass33(this )" value="engage" ></button>
+        <button class="day34" id="day34" onclick="toggleClass34(this )" value="engage" ></button>
+        <button class="day35" id="day35" onclick="toggleClass35(this )" value="engage" ></button>
+    </div>
+
+
+
+<!-- Calendar Week 6-->
+<div class="week6">
+        <button class="day36" id="day36" onclick="toggleClass36(this )" value="engage" ></button>
+        <button class="day37" id="day37" onclick="toggleClass37(this )" value="engage" ></button>
+        <button class="day38" id="day38" onclick="toggleClass38(this )" value="engage" ></button>
+        <button class="day39" id="day39" onclick="toggleClass39(this )" value="engage" ></button>
+        <button class="day40" id="day40" onclick="toggleClass40(this )" value="engage" ></button>
+        <button class="day41" id="day41" onclick="toggleClass41(this )" value="engage" ></button>
+        <button class="day42" id="day42" onclick="toggleClass42(this )" value="engage" ></button>
+</div>
+</div>
+
+
+<!--
+<button id="day1k" onclick="toggleClass(this )" value="engage" > Hide or show Value</button>
+-->
+
+<script src="script.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+<script>
+    /*
+    function toggleClass(){
+        const p = document.getElementById('p');
+        p.classList.toggle('hide');
+        
+
+
+    }; */
+
+  
+
+</script>
+
+</body>
+</html>
