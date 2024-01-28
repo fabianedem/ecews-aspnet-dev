@@ -52,20 +52,15 @@ function initialize_calendar(){
 
 
     month = 0;
-    document.getElementById("calendar_month").value = months[month];
-    document.getElementById("calendar_year").value = year;
+    echoDate()
     checkDay();
 
     lastDay = lastday(year,month);
 
     //Clear Date Container
-    for (let i = 1; i <= 42; i++) {
+    clear();
 
-        day = "day" + i ;
-        document.getElementById(day).innerHTML = ""; 
-      }
-    
-    
+
      if (activeFirstDay == "Sunday"){
         for (let i = 1; i <= lastDay; i++) {
             var j = i + 0;
@@ -120,6 +115,22 @@ function initialize_calendar(){
 }
 
 
+function clear(){
+  for (let i = 1; i <= 42; i++) {
+
+    day = "day" + i ;
+    document.getElementById(day).innerHTML = ""; 
+  }
+
+}
+
+
+function echoDate(){
+  document.getElementById("calendar_month").value = months[month];
+  document.getElementById("calendar_year").value = year;
+}
+
+
 //Last day of the month based on date Check
 function checkDay(){
 
@@ -150,24 +161,20 @@ function checkDay(){
 //Add Months
    function addMonth(){
     
+   
 
     if (month < 11){
 
         month += 1;
         //alert(months[month]);
 
-        document.getElementById("calendar_month").value = months[month];
-        document.getElementById("calendar_year").value = year;
+        echoDate()
         checkDay();
 
         lastDay = lastday(year,month);
 
         //Clear Date Container
-        for (let i = 1; i <= 42; i++) {
-
-            day = "day" + i ;
-            document.getElementById(day).innerHTML = ""; 
-          }
+        clear();
 
         
         if (activeFirstDay == "Sunday"){
@@ -249,17 +256,12 @@ function checkDay(){
         month = 0;
         year += 1;
        //alert(months[month]);
-       document.getElementById("calendar_month").value = months[month];
-       document.getElementById("calendar_year").value = year;
+       echoDate()
        checkDay();
        lastDay = lastday(year,month);  
        
        //Clear Date Container
-    for (let i = 1; i <= 42; i++) {
-
-        day = "day" + i ;
-        document.getElementById(day).innerHTML = ""; 
-      }
+       clear();
 
     if (activeFirstDay == "Sunday"){
         for (let i = 1; i <= lastDay; i++) {
@@ -269,6 +271,7 @@ function checkDay(){
             document.getElementById(day).innerHTML = i;
 
       }}
+      
 
     if (activeFirstDay == "Monday"){
         for (let i = 1; i <= lastDay; i++) {
@@ -362,17 +365,12 @@ function checkDay(){
 
         month -= 1;
         //alert(months[month]);
-        document.getElementById("calendar_month").value = months[month];
-        document.getElementById("calendar_year").value = year;
+        echoDate()
         checkDay();
         lastDay = lastday(year,month);
 
         //Clear Date Container
-    for (let i = 1; i <= 42; i++) {
-
-        day = "day" + i ;
-        document.getElementById(day).innerHTML = ""; 
-      }
+        clear();
 
     if (activeFirstDay == "Sunday"){ 
       for (let i = 1; i <= lastDay; i++) {
@@ -453,17 +451,12 @@ function checkDay(){
         month = 11;
         year -= 1
         //alert(months[month]);
-        document.getElementById("calendar_month").value = months[month];
-        document.getElementById("calendar_year").value = year;
+        echoDate()
         checkDay();
         lastDay = lastday(year,month);
 
         //Clear Date Container
-    for (let i = 1; i <= 42; i++) {
-
-        day = "day" + i ;
-        document.getElementById(day).innerHTML = ""; 
-      }
+        clear();
 
     
     if (activeFirstDay == "Sunday"){ 
@@ -916,3 +909,5 @@ btn.addEventListener('click', function onClick(event) {
 });
 
 */
+
+//document.getElementById("try").style.backgroundColor='red';
